@@ -27,25 +27,36 @@ let h1 = document.querySelector("h1")
 
 // decrease
 function decremental(){
-    h1.innerText-- ;
+    h1.innerText--;
+    if(parselnt(h1.innerText)<0){
+        document.body.style.backgroundColor = "red";
+    }
 }
-dec.addEventListener("click", decremental);
 
+dec.addEventListener("click",decremental);
 
-let inc = document.querySelector(".inc")
-let newh1 = document.querySelector("h1")
+// increase
+let inc = document.querySelector(".inc");
+let newh1 = document.querySelector("h1");
 
 function incremental(){
     newh1.innerText ++;
+    if(parselnt(h1.innerText)>0){
+        document.body.style.backgroundColor = "green";
+    }
 }
 
-inc.addEventListener("click", incremental);
+inc.addEventListener("click",incremental);
 
-let res = document.querySelector(".res")
-let Nh1 = document.querySelector("h1")
+// reset
+let res = document.querySelector(".res");
+let Nh1 = document.querySelector("h1");
 
 function reset(){
-    Nh1.innerText = [0]
+    if(parselnt(Nh1.innerText) ===0);
+    Nh1.innerText = 0;
+    document.body.style.backgroundColor = "yellow";
+
 }
 
-res.addEventListener("click", reset)
+res.addEventListener("click",reset)
